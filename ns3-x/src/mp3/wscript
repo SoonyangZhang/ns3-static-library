@@ -1,0 +1,15 @@
+## -*- Mode: python; py-indent-offset: 4; indent-tabs-mode: nil; coding: utf-8; -*-
+
+def build(bld):
+    mp3= bld.create_ns3_module('mp3')
+    mp3.env.append_value("CXXFLAGS", "-I/home/zsy/MyTest/foo")
+    mp3.env.append_value("LINKFLAGS", ["-L/home/zsy/MyTest/foo/build"])
+    mp3.env.append_value("LIB", ["foo"])
+    mp3.source = [
+    'model/mysrc.cc'
+	]
+    headers = bld(features='ns3header')
+    headers.module = 'mp3'
+    headers.source = [
+    'model/mysrc.h',   
+	]
