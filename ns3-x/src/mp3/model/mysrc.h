@@ -8,7 +8,8 @@ class MySrc{
 public:
     MySrc();
     ~MySrc();
-    void Print(std::string name);
+    void PrintToInner(std::string name);
+    void PrintOuter(std::string name);
 private:
     class Impl;
     Impl *m_impl{NULL};
