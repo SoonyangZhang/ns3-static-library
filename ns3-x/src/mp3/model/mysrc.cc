@@ -1,11 +1,15 @@
 #include "ns3/mysrc.h"
 #include <foo.h>
+#include <iostream>
 namespace ns3{
-class MySrc::Impl{
+class MySrc::Impl:public Foo2{
 public:
-    Impl(){}
-    void Print(std::string name){
+    Impl():m_foo(this){}
+    void Printout(std::string name){
        m_foo.Print(name); 
+    }
+    void Print(std::string name) override{
+        std::cout<<"call back "<<name<<std::endl;
     }
 private:
     Foo m_foo;
