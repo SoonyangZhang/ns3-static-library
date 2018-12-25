@@ -3,5 +3,5 @@ using namespace ns3;
 int main(){
     MySrc src;
     std::string name("foo");
-    src.PrintToInner(name);
+    src.Print(name);
 }

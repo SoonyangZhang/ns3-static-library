@@ -1,18 +1,16 @@
 #ifndef MY_SRC_H_
 #define MY_SRC_H_
 #include <string>
-//#include <foo.h> fatal error: foo.h: No such file or directory
-// move it to the source file
+#include <foo.h>
 namespace ns3{
-class MySrc{
+class MySrc:Foo2{
 public:
     MySrc();
     ~MySrc();
-    void PrintToInner(std::string name);
-    void PrintOuter(std::string name);
+    void Print(std::string name);
 private:
-    class Impl;
-    Impl *m_impl{NULL};
+    void Foo2Print(std::string name) override;
+    Foo foo;
 };
 }
 #endif
